@@ -1,0 +1,36 @@
+{{#each details.results.object as |item index|}}
+    {{#if (gt index 0)}}
+        <hr>
+    {{/if}}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a {{action "showSource" index}} class="nav-link {{if item.showSource "active"}}" href="#">_source</a>
+        </li>
+        <li class="nav-item">
+            <a {{action "showTable" index}} class="nav-link {{if item.showTable "active"}}" href="#">Table</a>
+        </li>
+        <li class="nav-item">
+            <a {{action "showJson" index}} class="nav-link {{if item.showJson "active"}}" href="#">JSON</a>
+        </li>
+    </ul>
+
+    {{#if item.showSource}}
+        <div class="tab-container fields-block scrollable-block">
+            {{#each-in item.sourceStringified as |key value|}}
+                <span class="field-key">{{key}}:</span><span class="field-value">{{value}}</span>
+            {{/each-in}}
+        </div>
+    {{/if}}
+
+    {{#if item.showTable}}
+        <div class="tab-container fields-table">
+            {{object-to-table item}}
+        </div>
+    {{/if}}
+
+    {{#if item.showJson}}
+        <div class="tab-container json-block">
+            <pre>{{{item.json}}}</pre>
+        </div>
+    {{/if}}
+{{/each}}
