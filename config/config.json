@@ -1,0 +1,100 @@
+{
+  "name": "Devo",
+  "acronym": "DEVO",
+  "description": "Devo is the cloud-native logging solution that delivers real-time visibility for security and operations teams.",
+  "entityTypes": ["IPv4", "IPv6", "hash", "email", "domain"],
+  "defaultColor": "light-gray",
+  "styles": ["./styles/style.less"],
+  "block": {
+    "component": {
+      "file": "./components/block.js"
+    },
+    "template": {
+      "file": "./templates/block.hbs"
+    }
+  },
+  "summary": {
+    "component": {
+      "file": "./components/summary.js"
+    },
+    "template": {
+      "file": "./templates/summary.hbs"
+    }
+  },
+  "request": {
+    "cert": "",
+    "key": "",
+    "passphrase": "",
+    "ca": "",
+    "proxy": "",
+    "rejectUnauthorized": true
+  },
+  "logging": {
+    "level": "info"
+  },
+  "options": [
+    {
+      "key": "url",
+      "name": "Base Devo URL",
+      "description": "The base URL for the Devo REST API including the schema (i.e., https://) and port.",
+      "type": "text",
+      "default": "https://apiv2-us.devo.com/search",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "apiToken",
+      "name": "Devo Authentication Token",
+      "description": "A valid Devo OAuth authentication token.",
+      "default": "",
+      "type": "password",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "searchString",
+      "name": "Devo Query String",
+      "description": "Devo query to execute expressed in LINQ script. The string `{{ENTITY}}` will be replace by the looked up indicator. For example: from firewall.all.traffic where dstIp = {{ENTITY}}",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "searchDays",
+      "name": "Number of Days to Search",
+      "description": "Relative number of days in history to search from now.",
+      "default": 7,
+      "type": "number",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "searchLimit",
+      "name": "Search Result Limit",
+      "description": "Maximum number of query results to return in the Polarity overlay.",
+      "default": 10,
+      "type": "number",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "summaryFields",
+      "name": "Summary Fields",
+      "description": "Comma delimited list of field values to include as part of the summary (no spaces between commas).  These fields must be returned by your search query. This option must be set to \"User can view and edit\" or \"User can view only\".",
+      "default": "",
+      "type": "text",
+      "userCanEdit": true,
+      "adminOnly": false
+    },
+    {
+      "key": "includeFieldNameInSummary",
+      "name": "Include Field Name in Summary",
+      "description": "If checked, field names will be included as part of the summary fields. This option must be set to \"User can view and edit\" or \"User can view only\".",
+      "default": false,
+      "type": "boolean",
+      "userCanEdit": true,
+      "adminOnly": false
+    }
+  ]
+}

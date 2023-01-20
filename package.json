@@ -1,12 +1,12 @@
 {
-  "main": "./integrations.js",
   "name": "Devo",
+  "version": "3.0.1-beta",
+  "main": "./integrations.js",
   "description": "Devo Query Engine",
-  "version": "3.0.0-beta",
   "private": true,
   "dependencies": {
-    "async": "^3.1",
+    "async": "^3.2.4",
     "node-cache": "^5.1.2",
-    "request": "^2.88"
+    "postman-request": "^2.88.1-postman.31"
   }
 }

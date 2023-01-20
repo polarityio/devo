@@ -25,6 +25,7 @@ module.exports = {
   description:
     'Devo is the cloud-native logging solution that delivers real-time visibility for security and operations teams.',
   entityTypes: ['IPv4', 'IPv6', 'hash', 'email', 'domain'],
+  defaultColor: 'light-gray',
   /**
    * An array of style files (css or less) that will be included for your integration. Any styles specified in
    * the below files can be used in your custom template.
@@ -90,8 +91,7 @@ module.exports = {
     {
       key: 'url',
       name: 'Base Devo URL',
-      description:
-        'The base URL for the Devo REST API including the schema (i.e., https://) and port.',
+      description: 'The base URL for the Devo REST API including the schema (i.e., https://) and port.',
       type: 'text',
       default: 'https://apiv2-us.devo.com/search',
       userCanEdit: false,
@@ -100,8 +100,7 @@ module.exports = {
     {
       key: 'apiToken',
       name: 'Devo Authentication Token',
-      description:
-        'A valid Devo OAuth authentication token.',
+      description: 'A valid Devo OAuth authentication token.',
       default: '',
       type: 'password',
       userCanEdit: false,
@@ -120,8 +119,7 @@ module.exports = {
     {
       key: 'searchDays',
       name: 'Number of Days to Search',
-      description:
-        'Relative number of days in history to search from now.',
+      description: 'Relative number of days in history to search from now.',
       default: 7,
       type: 'number',
       userCanEdit: false,
@@ -130,8 +128,7 @@ module.exports = {
     {
       key: 'searchLimit',
       name: 'Search Result Limit',
-      description:
-        'Maximum number of query results to return in the Polarity overlay.',
+      description: 'Maximum number of query results to return in the Polarity overlay.',
       default: 10,
       type: 'number',
       userCanEdit: false,
