@@ -1,8 +1,7 @@
 {
   "name": "Devo",
-  "version": "3.0.4",
-  "main": "./integrations.js",
-  "description": "Devo Query Engine",
+  "version": "3.0.5",
+  "main": "./integration.js",
   "private": true,
   "dependencies": {
     "async": "^3.2.4",
