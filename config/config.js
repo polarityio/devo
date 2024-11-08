@@ -24,7 +24,7 @@ module.exports = {
    */
   description:
     'Devo is the cloud-native logging solution that delivers real-time visibility for security and operations teams.',
-  entityTypes: ['IPv4', 'IPv6', 'hash', 'email', 'domain'],
+  entityTypes: ['IPv4', 'IPv6', 'MD5', 'SHA1', 'SHA256', 'email', 'domain'],
   defaultColor: 'light-gray',
   /**
    * An array of style files (css or less) that will be included for your integration. Any styles specified in
@@ -73,7 +73,7 @@ module.exports = {
     ca: '',
     // An HTTP proxy to be used. Supports proxy Auth with Basic Auth, identical to support for
     // the url parameter (by embedding the auth info in the uri)
-    proxy: ""
+    proxy: ''
   },
   logging: {
     level: 'info' //trace, debug, info, warn, error, fatal

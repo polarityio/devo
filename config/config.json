@@ -3,7 +3,7 @@
   "name": "Devo",
   "acronym": "DEVO",
   "description": "Devo is the cloud-native logging solution that delivers real-time visibility for security and operations teams.",
-  "entityTypes": ["IPv4", "IPv6", "hash", "email", "domain"],
+  "entityTypes": ["IPv4", "IPv6", "MD5", "SHA1", "SHA256", "email", "domain"],
   "defaultColor": "light-gray",
   "styles": ["./styles/style.less"],
   "block": {
@@ -21,13 +21,6 @@
     "template": {
       "file": "./templates/summary.hbs"
     }
-  },
-  "request": {
-    "cert": "",
-    "key": "",
-    "passphrase": "",
-    "ca": "",
-    "proxy": ""
   },
   "logging": {
     "level": "info"
