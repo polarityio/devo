@@ -1,0 +1,109 @@
+{
+  "results": {
+    "object": [
+      {
+        "eventdate": "2024-01-16T14:23:45.123Z",
+        "timestamp": 1705412625,
+        "srcIp": "192.168.10.45",
+        "srcPort": 52341,
+        "dstIp": "185.220.101.45",
+        "dstPort": 443,
+        "protocol": "TCP",
+        "action": "deny",
+        "rule": "Block-Malicious-IPs",
+        "user": "jsmith@company.local",
+        "application": "web-browsing",
+        "category": "malware",
+        "bytes_sent": 2048,
+        "bytes_received": 0,
+        "session_id": "sess-98765",
+        "threat_name": "C2-Callback-Attempt",
+        "severity": "high",
+        "device": "fw-01.company.local",
+        "zone_src": "internal",
+        "zone_dst": "external"
+      },
+      {
+        "eventdate": "2024-01-16T14:22:18.456Z",
+        "timestamp": 1705412538,
+        "srcIp": "10.50.30.122",
+        "srcPort": 49827,
+        "dstIp": "8.8.8.8",
+        "dstPort": 53,
+        "protocol": "UDP",
+        "action": "allow",
+        "rule": "Allow-DNS",
+        "user": "system",
+        "application": "dns",
+        "category": "network-service",
+        "bytes_sent": 64,
+        "bytes_received": 128,
+        "session_id": "sess-45632",
+        "device": "fw-02.company.local",
+        "zone_src": "dmz",
+        "zone_dst": "external",
+        "query_name": "suspicious-domain.com",
+        "query_type": "A"
+      },
+      {
+        "eventdate": "2024-01-16T14:21:05.789Z",
+        "timestamp": 1705412465,
+        "srcIp": "172.16.5.88",
+        "srcPort": 45123,
+        "dstIp": "104.28.12.34",
+        "dstPort": 80,
+        "protocol": "TCP",
+        "action": "allow",
+        "rule": "Allow-HTTP-Out",
+        "user": "mmiller@company.local",
+        "application": "web-browsing",
+        "category": "internet",
+        "bytes_sent": 512,
+        "bytes_received": 45678,
+        "session_id": "sess-23451",
+        "device": "fw-01.company.local",
+        "zone_src": "internal",
+        "zone_dst": "external",
+        "url": "http://example.com/page.html",
+        "user_agent": "Mozilla/5.0"
+      }
+    ],
+    "status": "SUCCESS",
+    "msg": "",
+    "cid": "qry-2024-01-16-abc123def456",
+    "from": "7d",
+    "to": "now",
+    "query": "from firewall.all.traffic where dstIp = 185.220.101.45"
+  },
+  "tags": [
+    {
+      "field": "action",
+      "value": "deny"
+    },
+    {
+      "field": "action",
+      "value": "allow"
+    },
+    {
+      "field": "severity",
+      "value": "high"
+    },
+    {
+      "field": "user",
+      "value": "jsmith@company.local"
+    },
+    {
+      "field": "user",
+      "value": "mmiller@company.local"
+    },
+    {
+      "field": "category",
+      "value": "malware"
+    }
+  ],
+  "_internal_debug": {
+    "query_execution_time_ms": 234,
+    "total_results_before_limit": 156,
+    "cache_hit": false
+  }
+}
